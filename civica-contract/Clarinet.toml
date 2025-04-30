@@ -7,6 +7,13 @@ cache_dir = '.\.cache'
 requirements = []
 [contracts.vote-counter]
 path = 'contracts/vote-counter.clar'
+[contracts.voter-registration]
+path = 'contracts/voter-registration.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.voting-process]
+path = 'contracts/voting-process.clar'
 clarity_version = 3
 epoch = 3.0
 [repl.analysis]
