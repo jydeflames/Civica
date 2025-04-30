@@ -5,6 +5,8 @@ authors = []
 telemetry = true
 cache_dir = '.\.cache'
 requirements = []
+[contracts.vote-counter]
+path = 'contracts/vote-counter.clar'
 [contracts.voter-registration]
 path = 'contracts/voter-registration.clar'
 clarity_version = 3
