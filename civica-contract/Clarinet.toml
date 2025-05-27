@@ -5,6 +5,8 @@ authors = []
 telemetry = true
 cache_dir = '.\.cache'
 requirements = []
+[contracts.voting-window]
+path = 'contracts/voting-window.clar'
 [contracts.vote-counter]
 path = 'contracts/vote-counter.clar'
 [contracts.voter-registration]
