@@ -5,10 +5,16 @@ authors = []
 telemetry = true
 cache_dir = '.\.cache'
 requirements = []
-[contracts.voting-window]
-path = 'contracts/voting-window.clar'
+[contracts.Transparent-voting]
+path = 'contracts/Transparent-voting.clar'
+clarity_version = 3
+epoch = 3.0
+
 [contracts.vote-counter]
 path = 'contracts/vote-counter.clar'
+clarity_version = 1
+epoch = 2.05
+
 [contracts.voter-registration]
 path = 'contracts/voter-registration.clar'
 clarity_version = 3
@@ -18,6 +24,11 @@ epoch = 3.0
 path = 'contracts/voting-process.clar'
 clarity_version = 3
 epoch = 3.0
+
+[contracts.voting-window]
+path = 'contracts/voting-window.clar'
+clarity_version = 1
+epoch = 2.05
 [repl.analysis]
 passes = ['check_checker']
 
