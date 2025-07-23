@@ -10,6 +10,11 @@ path = 'contracts/Transparent-voting.clar'
 clarity_version = 3
 epoch = 3.0
 
+[contracts.governance]
+path = 'contracts/governance.clar'
+clarity_version = 3
+epoch = 3.0
+
 [contracts.vote-counter]
 path = 'contracts/vote-counter.clar'
 clarity_version = 1
