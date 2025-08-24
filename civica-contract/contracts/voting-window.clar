@@ -43,10 +43,10 @@
     (asserts! (not (var-get voting-started)) ERR-ALREADY-STARTED)
     
     ;; Set the start block to current block height
-    (var-set start-block stacks-block-height)
+    (var-set start-block block-height)
     
     ;; Set the end block based on duration
-    (var-set end-block (+ stacks-block-height duration))
+    (var-set end-block (+ block-height duration))
     
     ;; Mark voting as started
     (var-set voting-started true)
@@ -82,8 +82,8 @@
     (asserts! (not (var-get voting-ended)) ERR-VOTING-ENDED)
     
     ;; Check if current block is within voting period
-    (asserts! (and (>= stacks-block-height (var-get start-block)) 
-                  (<= stacks-block-height (var-get end-block)))
+    (asserts! (and (>= block-height (var-get start-block)) 
+                  (<= block-height (var-get end-block)))
               ERR-VOTING-ENDED)
     
     ;; Check if sender hasn't already voted
@@ -105,8 +105,8 @@
 (define-read-only (is-voting-active)
   (and (var-get voting-started)
        (not (var-get voting-ended))
-       (>= stacks-block-height (var-get start-block))
-       (<= stacks-block-height (var-get end-block))))
+       (>= block-height (var-get start-block))
+       (<= block-height (var-get end-block))))
 
 ;; Read-only function to get voting status
 (define-read-only (get-voting-status)
@@ -115,7 +115,7 @@
     ended: (var-get voting-ended),
     start-block: (var-get start-block),
     end-block: (var-get end-block),
-    current-block: stacks-block-height,
+    current-block: block-height,
     vote-count: (var-get vote-count)
   })
 
